@@ -1,9 +1,9 @@
 void setup ()
 {
   size(850,850);
- 
+  img = loadImage("solidsnake.jpg");
 }
-  
+PImage img;  
 float x = 0;
 float xSpeed = 1;
 float w = 20;
@@ -16,7 +16,28 @@ void draw()
   //middle codec picture
   rect(270,200,280,200);
   // Bars
-
+ //m
+ if (frameCount % 50 == 0)
+ {
+   fill(random(255,255),random(255,255),random(255,255));
+ }
+  rect(270,200,260,20);
+  if (frameCount % 40 == 0)
+ {
+   fill(random(255,255),random(255,255),random(255,255));
+ }
+  rect(270,220,240,20);
+  if (frameCount % 30 == 0)
+ {
+   fill(random(255,255),random(255,255),random(255,255));
+ }
+  rect(270,240,220,20);
+  if (frameCount % 20 == 0)
+ {
+   fill(random(255,255),random(255,255),random(255,255));
+ }
+  rect(270,260,200,20);
+  if (frameCount % 10 == 0)
  {
    fill(random(255,255),random(255,255),random(255,255));
  }
