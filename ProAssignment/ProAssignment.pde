@@ -181,6 +181,12 @@ void CreateStatic(int sizeX, int sizeY, int squareSize) {
  void Picture2()
   {
     //the right picture
+    fill(0,0,0);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Clayton", 30, 400);
+    text("Occupation : Tech", 30, 415);
     image(jmg,20,100);
     fill(0,0,0);
     rect(250,500,350,60);
@@ -190,6 +196,12 @@ void CreateStatic(int sizeX, int sizeY, int squareSize) {
   }
   void Picture3()
   {
+    fill(0,0,0);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Gary", 30, 400);
+    text("Occupation : Hacker", 30, 415);
     image(kmg,20,100);
     fill(0,0,0);
     rect(250,500,350,60);
@@ -199,6 +211,12 @@ void CreateStatic(int sizeX, int sizeY, int squareSize) {
   }
   void Picture4()
   {
+    fill(0,0,0);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Ronin", 30, 400);
+    text("Occupation : ??", 30, 415);
     image(lmg,20,100);
     fill(0,0,0);
     rect(250,500,350,60);
