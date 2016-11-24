@@ -1,19 +1,30 @@
 void setup ()
 {
   size(850,850);
-  img = loadImage("solidsnake.jpg");
+  hmg = loadImage("solidsnake.jpg");
+  img = loadImage("foxhound.jpg");
+  jmg = loadImage("clayton.jpg");
+  kmg = loadImage("hacker.jpg");
+  lmg = loadImage("ronin.jpg");
+  
 }
-PImage img;  
+PImage hmg, img, jmg, kmg, lmg;  
+int y;
 float x = 0;
 float xSpeed = 1;
 float w = 20;
 float z = 40;
+int currentpic = 0;
 int currentScene;
+//int tunenumber;
 void draw()
 {
+ // background(img);
+ 
   
   background(48,88,42);
   //middle codec picture
+  fill(0,0,0);
   rect(270,200,280,200);
   // Bars
  //m
@@ -41,6 +52,7 @@ void draw()
  {
    fill(random(255,255),random(255,255),random(255,255));
  }
+ //bars
   rect(270,280,180,20);
   fill(252,252,252);
   rect(270,300,160,20);
@@ -48,13 +60,16 @@ void draw()
   rect(270,340,120,20);
   rect(270,360,100,20);
   //right picture
-  fill(64,56,78);
   rect(20,100,200,350);
   //left picture
+  fill(0,0,0);
   rect(600,100,200,350);
- 
+  image(hmg,600,100);
+  fill(161,242,139);
+  textSize(25);
+  text("Solid Snake", 620, 440);
   //PTT
-  fill(0, 0,17);
+  fill(0, 0,0);
   rect(350,100,120,50);
   textSize(30);
   fill(161,242,139);
@@ -76,8 +91,15 @@ void draw()
   textSize(30);
   fill(161,242,139);
   text("104.52",425,390);
-  
+  //tune button
+  fill(0, 0,0);
+  rect(500,422, 90, 25);
+  fill(161,242,139);
+  textSize(16);
+  text("- TUNE +", 508, 440);
 
+
+/*
   if (mousePressed == true)
   {
     Scene1();
@@ -86,32 +108,5 @@ void draw()
   {
     Scene2();
   }
-    
-}
-
-void Scene1()
-{
-    currentScene = 1;
-    background(17, 62, 19);
-    fill(255,0,0);
-    rect(330,150,150,75);
-    fill(0, 0, 0);
-    textSize(39);
-    text("Call", 372,200);
-    //start with calling screen
-    //arrow buttons that change persons picture
-}
-
-void Scene2()
-{
-  fill(66, 66, 66);
-   
-  //bouncing square across the screen
-
-  rect(x, 200, z, w);
-  x += xSpeed;
-  if (x + w > width || x < 0)
-  {
-    xSpeed = - xSpeed;
-  }
+ */
 }
