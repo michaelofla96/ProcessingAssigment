@@ -61,6 +61,7 @@ void draw()
   rect(270,360,100,20);
   //right picture
   rect(20,100,200,350);
+  CreateStatic(40,70,5);
   //left picture
   fill(0,0,0);
   rect(600,100,200,350);
@@ -98,7 +99,8 @@ void draw()
   textSize(16);
   text("- TUNE +", 508, 440);
 
-
+  
+  
 /*
   if (mousePressed == true)
   {
@@ -109,4 +111,48 @@ void draw()
     Scene2();
   }
  */
+}
+void Scene1()
+{
+    currentScene = 1;
+    background(17, 62, 19);
+    fill(255,0,0);
+    rect(330,150,150,75);
+    fill(0, 0, 0);
+    textSize(39);
+    text("Call", 372,200);
+    //start with calling screen
+    //arrow buttons that change persons picture
+}
+
+void Scene2()
+{
+  fill(66, 66, 66);
+   
+  //bouncing square across the screen
+
+  rect(x, 200, z, w);
+  x += xSpeed;
+  if (x + w > width || x < 0)
+  {
+    xSpeed = - xSpeed;
+  }
+}
+void CreateStatic(int sizeX, int sizeY, int squareSize) {
+  // create static
+  int x = 20;
+  int y = 100;
+  for(int i = 0; i < sizeY; i++){
+    for(int j = 0; j < sizeX; j++) {
+      float rand = (int)(Math.random() * 2);
+      if (rand == 1){
+        fill(0,0,0);
+      }
+      else fill(255,255,255);
+      rect(x,y,squareSize,squareSize);
+      x += squareSize;
+    }
+    x = 20;
+    y += squareSize;
+  }
 }
