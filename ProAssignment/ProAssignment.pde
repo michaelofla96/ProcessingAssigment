@@ -180,13 +180,29 @@ void CreateStatic(int sizeX, int sizeY, int squareSize) {
 }
  void Picture2()
   {
-  
+    //the right picture
+    image(jmg,20,100);
+    fill(0,0,0);
+    rect(250,500,350,60);
+     fill(161,242,139);
+     textSize(25);
+     text("What's the situation Snake", 260, 540);
   }
   void Picture3()
   {
-  
+    image(kmg,20,100);
+    fill(0,0,0);
+    rect(250,500,350,60);
+    fill(161,242,139);
+    textSize(25);
+    text("Snake where are you?", 260, 540);
   }
   void Picture4()
   {
-  
+    image(lmg,20,100);
+    fill(0,0,0);
+    rect(250,500,350,60);
+    fill(161,242,139);
+    textSize(25);
+    text("Solid, do you read me?", 260, 540);
   }
