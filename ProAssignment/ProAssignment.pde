@@ -99,7 +99,29 @@ void draw()
   textSize(16);
   text("- TUNE +", 508, 440);
 
-  
+  if (mouseX >= 500 && mouseX <= 590 && mouseY >= 422 && mouseY <= 465)
+    {
+    if(mousePressed)
+    {
+      currentpic++; //tunenumber ++
+    }
+  }
+  if (currentpic == 1)//tunenumber >= 90 && tunenumber <=92
+  {
+    Picture2();
+  } 
+  else if (currentpic == 2) //tunenumber >=96 && tunenumber <= 98
+  {
+    Picture3();
+  } 
+  else if (currentpic == 3) //tunenumber >= 101 && tunenumber <= 103
+  {
+    Picture4();
+  }
+  else if (currentpic == 4)
+  {
+    CreateStatic(1, 1, 1);
+  }
   
 /*
   if (mousePressed == true)
@@ -156,3 +178,15 @@ void CreateStatic(int sizeX, int sizeY, int squareSize) {
     y += squareSize;
   }
 }
+ void Picture2()
+  {
+  
+  }
+  void Picture3()
+  {
+  
+  }
+  void Picture4()
+  {
+  
+  }
