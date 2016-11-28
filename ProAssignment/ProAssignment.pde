@@ -1,3 +1,5 @@
+import processing.sound.*;
+SoundFile file;
 
 void setup ()
 {
@@ -12,12 +14,8 @@ void setup ()
 PImage hmg, img, jmg, kmg, lmg;  
 int y;
 float x = 0;
-float xSpeed = 1;
-float w = 20;
-float z = 40;
 int currentpic = 0;
 int currentScene;
-//int tunenumber;
 void draw()
 {
  // background(img);
@@ -90,9 +88,6 @@ void draw()
   ellipse(245,290,30,20);
   //button left
   ellipse(575,290,30,20);
-  
-  // text 104.52
-  //changeFrequency("104.52");
   //tune button
   fill(0, 0,0);
   rect(500,422, 90, 25);
@@ -126,6 +121,8 @@ void draw()
   }
   else {
     currentpic = 0;
+    file = new SoundFile(this, "static.wav");
+    file.play();
   }
 
 }
@@ -138,29 +135,24 @@ void changeFrequency(String frequency) {
 
 void Scene1()
 {
+    //Call Screen
     currentScene = 1;
     background(17, 62, 19);
+    //Call box
     fill(255,0,0);
     rect(330,150,150,75);
     fill(0, 0, 0);
     textSize(39);
     text("Call", 372,200);
-    //start with calling screen
-    //arrow buttons that change persons picture
+    //Call text
+    textSize(20);
+    text("Push Button", 350, 230);
+    
 }
 
 void Scene2()
 {
-  fill(66, 66, 66);
-   
-  //bouncing square across the screen
-
-  rect(x, 200, z, w);
-  x += xSpeed;
-  if (x + w > width || x < 0)
-  {
-    xSpeed = - xSpeed;
-  }
+     currentScene = 2;
 }
 
 void hoverImage(String name, String occupation) 
