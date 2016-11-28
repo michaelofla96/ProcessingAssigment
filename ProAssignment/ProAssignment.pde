@@ -1,3 +1,4 @@
+
 void setup ()
 {
   size(850,850);
@@ -110,12 +111,12 @@ void draw()
   
   if (currentpic == 1)//tunenumber >= 90 && tunenumber <=92
   {
-   
+    
     Picture2();
   } 
   else if (currentpic == 2) //tunenumber >=96 && tunenumber <= 98
   {
-    
+ 
     Picture3();
   } 
   else if (currentpic == 3) //tunenumber >= 101 && tunenumber <= 103
@@ -158,8 +159,20 @@ void Scene2()
   }
 }
 
-  
-
+void hoverImage(String name, String occupation) 
+{
+  if( mouseX > 20 && mouseY > 100 && mouseX < 220 && mouseY < 450)
+  {
+    String n = "Name: " + name;
+    String occ = "Occupation : " + occupation;
+    fill(0,0,0);
+    rect(20,350,200,100);
+    fill(161,242,139);
+    textSize(15);
+    text(n, 30, 400);
+    text(occ, 30, 415);
+  }   
+}
 
 void CreateStatic(int sizeX, int sizeY, int squareSize)
 {
@@ -188,7 +201,7 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     //info
     fill(0,0,0);
     rect(20,350,200,100);
-    text("ClaytonTech",60,40);
+    hoverImage("Clayton","Tech");
     //image
     image(jmg,20,100);
     //textbox
@@ -203,7 +216,7 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     //info
     fill(0,0,0);
     rect(20,350,200,100);
-    text("GaryHacker",20,20);
+    hoverImage("Gary","Hacker");
     //image
     image(kmg,20,100);
     //textbox
@@ -218,7 +231,7 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     //info
     fill(0,0,0);
     rect(20,350,200,100);
-    text("Ronin??",20,20);
+    hoverImage("Ronin","??");
     //image
     image(lmg,20,100);
     //textbox
