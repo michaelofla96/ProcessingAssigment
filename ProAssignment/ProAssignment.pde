@@ -4,13 +4,15 @@ SoundFile file;
 void setup ()
 {
   size(850,850);
+  font = createFont("Dialog.plain", 60);
+  textFont(font);
   hmg = loadImage("solidsnake.jpg");
   img = loadImage("foxhound.jpg");
   jmg = loadImage("clayton.jpg");
   kmg = loadImage("hacker.jpg");
   lmg = loadImage("ronin.jpg");
-  
 }
+PFont font;
 PImage hmg, img, jmg, kmg, lmg;  
 int y;
 float x = 0;
@@ -18,6 +20,16 @@ int currentpic = 0;
 int currentScene;
 void draw()
 {
+ /* if (mousePressed == true)
+  {
+    Scene1();
+  }
+  if (mousePressed == false)
+  {
+    Scene2();
+  }
+  
+  */
  // background(img);
  
   
@@ -203,9 +215,9 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     //textbox
     fill(0,0,0);
     rect(250,500,350,60);
-     fill(161,242,139);
-     textSize(25);
-     text("\"What's the situation Snake\"", 260, 540);
+    fill(161,242,139);
+    textSize(25);
+    text("\"What's the situation Snake\"", 260, 540);
   }
   void Picture3()
   {
