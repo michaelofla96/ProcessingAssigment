@@ -111,17 +111,17 @@ void draw()
   
   if (currentpic == 1)//tunenumber >= 90 && tunenumber <=92
   {
-    
+    changeFrequency("90.2");
     Picture2();
   } 
   else if (currentpic == 2) //tunenumber >=96 && tunenumber <= 98
   {
- 
+    changeFrequency("98.5");
     Picture3();
   } 
   else if (currentpic == 3) //tunenumber >= 101 && tunenumber <= 103
   {
-   
+    changeFrequency("110.9");
     Picture4();
   }
   else {
@@ -130,7 +130,11 @@ void draw()
 
 }
 
-
+void changeFrequency(String frequency) {
+  textSize(30);
+  fill(161,242,139);
+  text(frequency,425,390);
+}
 
 void Scene1()
 {
