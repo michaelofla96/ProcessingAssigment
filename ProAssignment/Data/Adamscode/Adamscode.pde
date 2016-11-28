@@ -99,7 +99,6 @@ void draw()
   textSize(16);
   text("- TUNE +", 508, 440);
   
-  
   if(mousePressed){
     if(mouseX>500 && mouseX <590 && mouseY>422 && mouseY <465){
        println("The mouse is pressed and over the button");
@@ -110,17 +109,17 @@ void draw()
   
   if (currentpic == 1)//tunenumber >= 90 && tunenumber <=92
   {
-   
+    changeFrequency("108.2");
     Picture2();
   } 
   else if (currentpic == 2) //tunenumber >=96 && tunenumber <= 98
   {
-    
+    changeFrequency("110.9");
     Picture3();
   } 
   else if (currentpic == 3) //tunenumber >= 101 && tunenumber <= 103
   {
-   
+    changeFrequency("90.2");
     Picture4();
   }
   else {
@@ -129,7 +128,11 @@ void draw()
 
 }
 
-
+void changeFrequency(String frequency) {
+  textSize(30);
+  fill(161,242,139);
+  text(frequency,425,390);
+}
 
 void Scene1()
 {
@@ -157,22 +160,14 @@ void Scene2()
     xSpeed = - xSpeed;
   }
 }
-
-  
-
-
-void CreateStatic(int sizeX, int sizeY, int squareSize)
-{
+void CreateStatic(int sizeX, int sizeY, int squareSize) {
   // create static
   int x = 20;
   int y = 100;
-  for(int i = 0; i < sizeY; i++)
-  {
-    for(int j = 0; j < sizeX; j++)
-    {
+  for(int i = 0; i < sizeY; i++){
+    for(int j = 0; j < sizeX; j++) {
       float rand = (int)(Math.random() * 2);
-      if (rand == 1)
-      {
+      if (rand == 1){
         fill(0,0,0);
       }
       else fill(255,255,255);
@@ -187,8 +182,11 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
   {
     //info
     fill(0,0,0);
-    rect(20,350,200,100);
-    text("ClaytonTech",60,40);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Clayton", 30, 400);
+    text("Occupation : Tech", 30, 415);
     //image
     image(jmg,20,100);
     //textbox
@@ -202,8 +200,11 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
   {
     //info
     fill(0,0,0);
-    rect(20,350,200,100);
-    text("GaryHacker",20,20);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Gary", 30, 400);
+    text("Occupation : Hacker", 30, 415);
     //image
     image(kmg,20,100);
     //textbox
@@ -214,11 +215,13 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     text("\"Snake where are you?\"", 260, 540);
   }
   void Picture4()
-  {
-    //info
+  {//info
     fill(0,0,0);
-    rect(20,350,200,100);
-    text("Ronin??",20,20);
+    rect(20,100,200,350);
+    fill(161,242,139);
+    textSize(15);
+    text("Name : Ronin", 30, 400);
+    text("Occupation : ??", 30, 415);
     //image
     image(lmg,20,100);
     //textbox
