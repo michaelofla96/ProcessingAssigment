@@ -1,5 +1,5 @@
 import processing.sound.*;
-SoundFile file, ring;
+SoundFile file;
 
 void setup ()
 {
@@ -10,6 +10,8 @@ void setup ()
   jmg = loadImage("clayton.jpg");
   kmg = loadImage("hacker.jpg");
   lmg = loadImage("ronin.jpg");
+  ring = false;
+  alert = false;
 }
 PFont font;
 PImage hmg, jmg, kmg, lmg;  
@@ -17,6 +19,8 @@ int y;
 float x = 0;
 int currentpic = 0;
 int currentScene = 1;
+boolean ring;
+boolean alert;
 void draw()
 {
   if (currentScene == 1) {
@@ -48,9 +52,10 @@ void draw()
     //Call text
     textSize(30);
     text("Push Button", 330, 270);
-    /*file = new SoundFile(this, "metalgearring.wav");
+    ring = true;
+    file = new SoundFile(this, "metalgearring.mp3");
     file.play();
-    */
+    
  }
  void Scene2()
 {
@@ -143,18 +148,22 @@ void draw()
   {
     changeFrequency("90.2");
     Picture2();
+    boolean alert = true;
   } 
   else if (currentpic == 2) //tunenumber >=96 && tunenumber <= 98
   {
     changeFrequency("98.5");
     Picture3();
+    alert = true;
   } 
   else if (currentpic == 3) //tunenumber >= 101 && tunenumber <= 103
   {
     changeFrequency("110.9");
     Picture4();
+    boolean alert = true;
   }
-  else {
+  else
+ {
     currentpic = 0;
     file = new SoundFile(this, "static.wav");
     file.play();
@@ -162,7 +171,8 @@ void draw()
  } //end of scene2
 
 
-void changeFrequency(String frequency) {
+void changeFrequency(String frequency)
+{
   textSize(30);
   fill(161,242,139);
   text(frequency,425,390);
