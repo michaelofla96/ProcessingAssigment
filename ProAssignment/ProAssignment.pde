@@ -1,5 +1,5 @@
 import processing.sound.*;
-SoundFile file;
+SoundFile file, ring;
 
 void setup ()
 {
@@ -7,32 +7,53 @@ void setup ()
   font = createFont("Dialog.plain", 60);
   textFont(font);
   hmg = loadImage("solidsnake.jpg");
-  img = loadImage("foxhound.jpg");
   jmg = loadImage("clayton.jpg");
   kmg = loadImage("hacker.jpg");
   lmg = loadImage("ronin.jpg");
 }
 PFont font;
-PImage hmg, img, jmg, kmg, lmg;  
+PImage hmg, jmg, kmg, lmg;  
 int y;
 float x = 0;
 int currentpic = 0;
-int currentScene;
+int currentScene = 1;
 void draw()
 {
- /* if (mousePressed == true)
-  {
+  if (currentScene == 1) {
     Scene1();
   }
-  if (mousePressed == false)
-  {
+  else if (currentScene == 2) {
     Scene2();
   }
-  
-  */
- // background(img);
- 
-  
+  if (mousePressed) {
+    if(mouseX>330 && mouseX <480 && mouseY>150 && mouseY <225)
+    {
+       System.out.println("clicked");
+       currentScene = 2;
+    }
+  }
+}
+
+  void Scene1()
+ {
+    //Call Screen
+    currentScene = 1;
+    background(17, 62, 19);
+    //Call box
+    fill(255,0,0);
+    rect(330,150,150,75);
+    fill(0, 0, 0);
+    textSize(39);
+    text("Call", 372,200);
+    //Call text
+    textSize(30);
+    text("Push Button", 330, 270);
+    /*file = new SoundFile(this, "metalgearring.wav");
+    file.play();
+    */
+ }
+ void Scene2()
+{
   background(48,88,42);
   //middle codec picture
   fill(0,0,0);
@@ -108,8 +129,10 @@ void draw()
   text("- TUNE +", 508, 440);
   
   
-  if(mousePressed){
-    if(mouseX>500 && mouseX <590 && mouseY>422 && mouseY <465){
+  if(mousePressed)
+  {
+    if(mouseX>500 && mouseX <590 && mouseY>422 && mouseY <465)
+    {
        println("The mouse is pressed and over the button");
        fill(0);
        currentpic++;
@@ -136,35 +159,13 @@ void draw()
     file = new SoundFile(this, "static.wav");
     file.play();
   }
+ } //end of scene2
 
-}
 
 void changeFrequency(String frequency) {
   textSize(30);
   fill(161,242,139);
   text(frequency,425,390);
-}
-
-void Scene1()
-{
-    //Call Screen
-    currentScene = 1;
-    background(17, 62, 19);
-    //Call box
-    fill(255,0,0);
-    rect(330,150,150,75);
-    fill(0, 0, 0);
-    textSize(39);
-    text("Call", 372,200);
-    //Call text
-    textSize(20);
-    text("Push Button", 350, 230);
-    
-}
-
-void Scene2()
-{
-     currentScene = 2;
 }
 
 void hoverImage(String name, String occupation) 
@@ -248,5 +249,4 @@ void CreateStatic(int sizeX, int sizeY, int squareSize)
     fill(161,242,139);
     textSize(25);
     text("\"Solid, do you read me?\"", 260, 540);
-    
   }
